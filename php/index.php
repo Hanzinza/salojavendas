@@ -11,7 +11,7 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <?php include("cliente.php"); ?>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
