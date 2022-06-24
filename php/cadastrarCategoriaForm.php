@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda de compromissos - Secretária</title>
+    <title>Cadastrar categorias/ Gerente</title>
 </head>
 <body>
 
     <h3 class="titulos">Cadastro de categorias</h3>  
 
-	<form action="#" method="POST" enctype="multipart/form-data">
+	<form action="cadastraCategoria.php" method="POST" enctype="multipart/form-data">
 		<div class="form-group">
 		  <label class="control-label">Nome *</label>  
 		<div class="col-md-8">
