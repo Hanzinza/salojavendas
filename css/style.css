@@ -8,7 +8,7 @@
 
 
 body {
-  background-image: url(/asset/sol.jpg);
+  background-image: url(../img/sol.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed

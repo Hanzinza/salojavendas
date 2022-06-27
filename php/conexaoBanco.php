@@ -3,7 +3,7 @@
 $usuario = "root";
 $senha = "";
 $local = "127.0.0.1:3307";
-$banco = "";
+$banco = "salojavendas";
 
 $conexao = mysqli_connect($local, $usuario, $senha, $banco);
 
