@@ -9,6 +9,7 @@ $cep = $_POST['cep'];
 $nrcasa = $_POST['nrcasa'];
 $senha = $_POST['senha'];
 $nivel=2;
-$comando
+
+$comando = "INSERT INTO usuarios" 
 
 ?>
