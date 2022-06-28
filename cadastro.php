@@ -13,37 +13,36 @@
           <div class='card'>
             <h1> Cadastrar</h1>
             
-            <div id='msgError'></div>
-            <div id='msgSuccess'></div>
-            
+           
+            <form action="php/CadastroClienteForm.php" method="POST" >
                     <div class="label-float">
-                       <input type="text" id="nome" placeholder=" " required>
+                       <input type="text" id="nome"name="nome" placeholder=" " required>
                        <label id="labelNome" for="nome">Nome</label>
                     </div>
         
                     <div class="label-float">
-                       <input type="email" id="email" placeholder=" " required>
-                       <label id="labelUsuario" for="usuario">E-mail</label>
+                       <input type="email" id="email" name="email" placeholder=" " required>
+                       <label id="labelEmail" for="email">E-mail</label>
                     </div>
 
                     <div class="label-float">
-                     <input type="text" id="usuario" placeholder=" " required>
-                     <label id="labelUsuario" for="usuario">CPF</label>
+                     <input type="text" id="cpf" name="cpf" placeholder=" " required>
+                     <label id="labelcpf" for="cpf">CPF</label>
                   </div>
 
                   <div class="label-float">
-                     <input type="text" id="usuario" placeholder=" " required>
-                     <label id="labelUsuario" for="usuario">telefone</label>
+                     <input type="text" id="telefone" name="telefone" placeholder=" " required>
+                     <label id="labeltelefone" for="telefone">telefone</label>
                   </div>
 
                   <div class="label-float">
-                     <input type="text" id="usuario" placeholder=" " required>
-                     <label id="labelUsuario" for="usuario">CEP</label>
+                     <input type="text" id="cep" name="cep" placeholder=" " required>
+                     <label id="labelcep" for="cep">CEP</label>
                   </div>
 
                   <div class="label-float">
-                     <input type="text" id="usuario" placeholder=" " required>
-                     <label id="labelUsuario" for="usuario">Numero da casa</label>
+                     <input type="text" id="nrcasa" name="nrcasa" placeholder=" " required>
+                     <label id="labelnrcasa" for="nrcasa">Numero da casa</label>
                   </div>
                     
                     <div class="label-float">
@@ -53,17 +52,14 @@
                        
                     </div>
         
-                    <div class="label-float">
-                       <input type="password" id="confirmSenha" placeholder=" " required>
-                       <label id="labelConfirmSenha" for="confirmSenha">Confirmar Senha</label>
-                       <i id="verConfirmSenha" class="fa fa-eye" aria-hidden="true"></i>
-                    </div>
+                  
                     
                     <div class='justify-center'>
                        <button>Cadastrar</button>
                     </div>
           </div>
           </div>
+          </form>
           <br>
           <h3>Já tem conta.<a href="login.php">Clique aqui</a></h3>
           <script src="js/app.js"></script>
