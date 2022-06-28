@@ -12,7 +12,7 @@
   </head>
   <body>
     <?php include("cliente.php"); ?>
-
+ <h1>kkkkkkkkkkkkk</h1>
     
 
     <!-- Optional JavaScript; choose one of the two! -->
