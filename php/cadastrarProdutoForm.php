@@ -37,9 +37,19 @@
             <div class="col-md-8">
             <label class="control-label">Categoria</label>
             <select name="idTipo" class="form-control">
+            <?php
+                require_once("conexaoBanco.php");
+                $comando="SELECT * FROM categorias";
+                $resultado=mysqli_query($conexao,$comando);
+                $tipos=array();
+                while($tp = mysqli_fetch_assoc($resultado)){
+                     array_push($tipos, $tp);
+                 }
 
-            <option value="oi">computador</option>
-            <option value="oii">monitor</option>
+                foreach($tipos as $tp){
+                    echo "<option value='".$tp['idCategoria']."'>".$tp['nome']."</option>";
+                }
+            ?>
             </select>
 </div>
 
@@ -86,11 +96,11 @@
 		</tr>
         <tr>
             <td>Mouse</td>
-            <td>20.99 R$</td>
+            <td>R$ 20.99 </td>
             <td>eletronico</td>
             <td>apagar/editar</td>
         </tr>
-
+</table>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
