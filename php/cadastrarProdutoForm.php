@@ -95,10 +95,40 @@
 			<th>Ações</th>
 		</tr>
         <tr>
-            <td>Mouse</td>
-            <td>R$ 20.99 </td>
-            <td>eletronico</td>
-            <td>apagar/editar</td>
+            <?php
+            $comando = "SELECT p.nome, p.preco, c.nome as nomeCategoria FROM produtos p
+            INNER JOIN categorias c
+            ON p.categorias_idCategoria = c.idCategoria";
+
+            if(isset($_GET['pesquisa']) && $_GET['pesquisa']!=""){
+                $pesquisa = $_GET['pesquisa'];
+                $comando = $comando." WHERE p.nome LIKE '".$pesquisa."%'";
+            }
+
+             //echo $comando;
+
+             $resultado = mysqli_query($conexao, $comando);
+             $produtosRetornadas = array();
+             $linhas = mysqli_num_rows($resultado);
+
+             if($linhas==0){
+                 echo "<tr><td colspan = '4'> Nenhum produto encontrado!</td></tr>";
+             }else{
+                 while($p = mysqli_fetch_assoc($resultado)){
+                     array_push($produtosRetornadas, $p);
+                 } // fechamento do while
+                 foreach($produtosRetornadas as $p)
+                 echo "<tr>";
+                 echo "<td>".$p['nome']."</td>";
+                 echo "<td>".$p['preco']."</td>";
+                 echo "<td>".$p['nomeCategoria']."</td>";
+                 echo "<td>".$p['nome']."</td>";
+             }
+
+            ?>
+
+
+           
         </tr>
 </table>
 
