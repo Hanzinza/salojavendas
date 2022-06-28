@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        
+      <meta charset="UTF-8">
         <link rel="stylesheet" href="css/style.css">
         
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
@@ -22,7 +22,7 @@
                     </div>
         
                     <div class="label-float">
-                       <input type="email" id="usuario" placeholder=" " required>
+                       <input type="email" id="email" placeholder=" " required>
                        <label id="labelUsuario" for="usuario">E-mail</label>
                     </div>
 
@@ -65,7 +65,7 @@
           </div>
           </div>
           <br>
-          <h3>Já tem conta.<a href="login.html">Clique aqui</a></h3>
+          <h3>Já tem conta.<a href="login.php">Clique aqui</a></h3>
           <script src="js/app.js"></script>
         </body>
 </html>
