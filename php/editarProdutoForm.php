@@ -17,9 +17,6 @@
   
 
 <h3 class="titulos">Cadastrar Produtos</h3>  
-
-<form action="editarProduto.php" method="POST">
-
 <?php
     require_once("conexaoBanco.php");
     $idProduto=$_POST['idProduto'];
@@ -29,38 +26,43 @@
     $resultado=mysqli_query($conexao,$comando);
     $t=mysqli_fetch_assoc($resultado);
 ?>
-<div class="form-group row">           
+
+<form action="editarProduto.php" method="POST" enctype="multipart/form-data">
+
+<input type="hidden" name="idProduto" value="<?=$t['idProduto']?>">
+
+<div class="form-group row"> 
             <div class="col-md-8">
             <label class="control-label">Descrição</label>
-            <input type="text" name="descricao" class="form-control" >
+            <input type="text" value="<?=$t['descricao']?>" name="descricao" class="form-control" >
             </div>
 </div>
 
 <div class="form-group row">           
             <div class="col-md-8">
             <label class="control-label">nome</label>
-            <input type="text" name="nome" class="form-control" >
+            <input type="text" value="<?=$t['nome']?>" name="nome" class="form-control" >
             </div>
 </div>
 
 <div class="form-group row">
+    <label class="control-label">Categoria</label>
             <div class="col-md-8">
-            <label class="control-label">Categoria</label>
             <select name="idTipo" class="form-control">
             <?php
                 require_once("conexaoBanco.php");
-                $comando="SELECT * FROM categorias";
-                $resultado=mysqli_query($conexao,$comando);
-                $tipos=array();
-                while($tp = mysqli_fetch_assoc($resultado)){
-                     array_push($tipos, $tp);
+                $comando = "SELECT * FROM categorias";
+                $resultado = mysqli_query($conexao,$comando);
+                $tipos = array();
+                while($r = mysqli_fetch_assoc($resultado)){
+                     array_push($tipos, $r);
                  }
 
-                foreach($tipos as $tp){
-                    if($comp['tiposCategoria_idTipo'] == $tp['idCategoria']){
-                        echo "<option selected value='".$tp['idCategoria']."'>".$tp['categoria']."</option>";
+                foreach($tipos as $r){
+                    if($t['categorias_idCategoria'] == $r['idCategoria']){
+                        echo "<option selected value='".$r['idCategoria']."'>".$r['nome']."</option>";
                     }else{
-                        echo "option value='".$tp['idCategoria']."'>".$tp['categoria']."</option>";
+                        echo "<option value='".$r['idCategoria']."'>".$r['nome']."</option>";
                     }
                 }
             ?>
@@ -70,7 +72,7 @@
 <div class="form-group row">           
             <div class="col-md-8">
             <label class="control-label">preço</label>
-            <input type="number" name="preco" class="form-control" >
+            <input type="number" value="<?=$t['preco']?>" name="preco" class="form-control" >
             </div>
 </div>
 
