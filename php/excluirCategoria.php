@@ -15,8 +15,12 @@ if($linhas==0){
     $comando="DELETE FROM categorias WHERE idCategoria=".$idCategoria;
     $resultado=mysqli_query($conexao,$comando);
 
+    if($resultado==true){
+        header("Location: cadastrarCategoriaForm.php?retorno=2");
+    }
 }else{
-    echo "{Não pode excluir}";
+   
+    header("Location: cadastrarCategoriaForm.php?retorno=3");
 }
 
 ?>

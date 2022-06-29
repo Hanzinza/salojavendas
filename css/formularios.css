@@ -1,6 +1,10 @@
 #textoPesquisa{
-    display: inline;
-    width:90%;
+	display: inline;
+	width: 50%;
+}
+
+.titulos{
+	margin-top:30px;
 }
 
 .botaoAcao{
