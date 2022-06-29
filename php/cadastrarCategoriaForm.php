@@ -7,6 +7,7 @@
     <title>Cadastrar categorias/ Gerente</title>
 </head>
 <body>
+<?php include("principalGerente.php"); ?>   
 
     <h3 class="titulos">Cadastro de categorias</h3>  
 
