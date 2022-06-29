@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="../css/alertas.css">
 </head>
 <body>
+<?php include("principalGerente.php"); ?>   
 
 <div id="alertas">
     <?php if(isset($_GET['retorno'])==true && $_GET['retorno']==0){ ?>

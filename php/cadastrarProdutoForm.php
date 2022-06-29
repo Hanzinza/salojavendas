@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../css/formularios.css">
     <title>Cadastrar produtos</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -35,9 +37,19 @@
             <div class="col-md-8">
             <label class="control-label">Categoria</label>
             <select name="idTipo" class="form-control">
+            <?php
+                require_once("conexaoBanco.php");
+                $comando="SELECT * FROM categorias";
+                $resultado=mysqli_query($conexao,$comando);
+                $tipos=array();
+                while($tp = mysqli_fetch_assoc($resultado)){
+                     array_push($tipos, $tp);
+                 }
 
-            <option value="oi">computador</option>
-            <option value="oii">monitor</option>
+                foreach($tipos as $tp){
+                    echo "<option value='".$tp['idCategoria']."'>".$tp['nome']."</option>";
+                }
+            ?>
             </select>
 </div>
 
@@ -77,18 +89,70 @@
     <div class="col-md-8">
     <table class="table">
 		<tr>
-			<th>Descrição</th>
+			<th>Nome</th>
 			<th>Preço</th>
 			<th>Categoria</th>
 			<th>Ações</th>
 		</tr>
         <tr>
-            <td>Mouse</td>
-            <td>20.99 R$</td>
-            <td>eletronico</td>
-            <td>apagar/editar</td>
-        </tr>
+            <?php
+            $comando = "SELECT p.*, c.nome as nomeCategoria FROM produtos p
+            INNER JOIN categorias c
+            ON p.categorias_idCategoria = c.idCategoria";
 
+            if(isset($_GET['pesquisa']) && $_GET['pesquisa']!=""){
+                $pesquisa = $_GET['pesquisa'];
+                $comando = $comando." WHERE p.nome LIKE '".$pesquisa."%'";
+            }
+
+             //echo $comando;
+
+             $resultado = mysqli_query($conexao, $comando);
+             $produtosRetornadas = array();
+             $linhas = mysqli_num_rows($resultado);
+
+             if($linhas==0){
+                 echo "<tr><td colspan = '4'> Nenhum produto encontrado!</td></tr>";
+             }else{
+                 while($p = mysqli_fetch_assoc($resultado)){
+                     array_push($produtosRetornadas, $p);
+                 } // fechamento do while
+                 foreach($produtosRetornadas as $p){
+                 echo "<tr>";
+                 echo "<td>".$p['nome']."</td>";
+                 echo "<td>".$p['preco']."</td>";
+                 echo "<td>".$p['nomeCategoria']."</td>";
+            ?>
+                <td>
+                <form action="editarProdutoForm.php" method="POST" class="formAcao">
+				<input type="hidden" name="idProduto" value="<?=$p['idProduto']?>">
+				<button type="submit" class="botaoAcao">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+					  <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+					</svg>
+				</button>				
+			</form> 
+                <form action="excluirProduto.php" method="POST" class="formAcao">
+				<input type="hidden" name="idProduto" value="<?=$p['idProduto']?>">
+				<button type="submit" class="botaoAcao">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+					<path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+					</svg>
+				</button>				
+			</form>			
+			</td>
+		</tr>
+
+            <?php
+                    }//fechamento do foreach
+                }// fechamento do else
+            ?>
+            </table>
+            </div>
+            </div>
+           
+        </tr>
+</table>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

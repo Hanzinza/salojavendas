@@ -14,7 +14,7 @@
             <h1> Cadastrar</h1>
             
            
-            <form action="php/CadastroClienteForm.php" method="POST" >
+            <form action="php/cadastroCliente.php" method="POST" >
                     <div class="label-float">
                        <input type="text" id="nome"name="nome" placeholder=" " required>
                        <label id="labelNome" for="nome">Nome</label>
@@ -46,7 +46,7 @@
                   </div>
                     
                     <div class="label-float">
-                       <input type="password" id="senha" placeholder=" " required>
+                       <input type="password" id="senha" name="senha" placeholder=" " required>
                        <label id="labelSenha" for="senha">Senha</label>
                        <i id="verSenha" class="fa fa-eye" aria-hidden="true"></i>
                        
