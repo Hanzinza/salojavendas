@@ -8,12 +8,21 @@
 
 
 body {
-  background-image: url(../img/sol.jpg);
+  /* background-image: url(../img/soll.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed
+  background-attachment: fixed */
+  width: 100%;  
+  min-height: 100vh;
   
+  background: #9053c7;
+  background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
+  background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
+  background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
 }
+  
+
 
 .container {
   display: flex;
