@@ -1,4 +1,7 @@
+<?php
+  require_once("functionCategoria.php");
 
+?>
 
         <!DOCTYPE html>
         <html lang="pt-br">
@@ -88,8 +91,9 @@
                         <input type='date' name='data' class='form-control'>
                          
                         <div class='col-md-2'>
-                                    <label class='control-label' value=>categoria</label>
-                                    <input type='text'  id='categoria' name='categoria' value=' class='form-control'>
+                        
+                                    <label class='control-label'>categoria</label>
+                                    <select id='categoria' name='categoria' class='form-control'>".listarCategoria()."</select>
                                     </div>
                 
                                     <div class='col-md-2'>
@@ -119,7 +123,9 @@
                                    
                                 </div>
                             ";
-                                    
+                            
+                                //echo  listarCategoria();
+                             
 
 
                                 ?>
