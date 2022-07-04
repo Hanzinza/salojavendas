@@ -93,7 +93,7 @@
                         <div class='col-md-2'>
                         
                                     <label class='control-label'>categoria</label>
-                                    <select id='categoria' name='categoria' class='form-control'>".listarCategoria()."</select>
+                                    <select id='categoria' name='categoria' class='form-control'></select>
                                     </div>
                 
                                     <div class='col-md-2'>
