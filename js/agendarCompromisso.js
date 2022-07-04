@@ -3,7 +3,7 @@ function adicionarProdutos(){
     $("#produtos").append(novoProduto);   
 }
 
-/**Função para o Agendar Compromissos */
+/**Função para comprar produtos */
 function removerProduto(botao){    
    var quantidadeProduto= document.getElementById("produtos").childElementCount;
    if(quantidadeProduto==1){
