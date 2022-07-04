@@ -28,41 +28,17 @@
 
             <h3 class="titulos">Comprar produtos</h3>  
 
-            <form action="cadastrarCompra.php" method="POST">
-
-            <!-- <div class="form-group row">
-                    <div class="col-md-8">
-                    <label class="control-label">Tipoaaaa *</label>
-                    <select name="idTipo" class="form-control">
-                    <?php
-                        require_once("conexaoBanco.php");
-                        $comando="SELECT * FROM produtos";
-                        $resultado=mysqli_query($conexao,$comando);
-                        $tipos=array();
-                        while($tp = mysqli_fetch_assoc($resultado)){
-                            array_push($tipos, $tp);
-                        }
-
-                        foreach($tipos as $tp){
-                            echo "<option value='".$tp['idProduto']."'>".$tp['nome']." ".$tp['descricao']." ".$tp['preco']." </option>";
-                           
-                            
-                        }
-                    ?>
-                    </select>
-                    </div>
-                </div> -->
-            
-                
-               
-                
-            
-                    
+            <form action="resumoCompra.php" method="POST">
+            <label class='control-label'>Data *</label> 
+            <input type='date' name='data' class='form-control'>
+            <div class='col-md-2'>
+             <label class='control-label'>Forma de pagamento</label>
+                <input type='text'  id='formapag' name='formapag' class='form-control'>
+            </div>
+         
 
                 <div class="form-group row" id="pessoa0">
-                <div class="row">
-                
-            
+                <div class="row">  
                 <br>
                 <br>
                 <h5 class="col-md-8"> 
@@ -72,7 +48,12 @@
                 <div id="pessoasDoCompromisso">  <!--Div que irá conter as pessoas do compromisso-->           
                     <div class="form-group row" class="pessoas"> <!--Exemplo de nova pessoa. Div que será clonada ao clicar em Adicionar Pessoa-->   			
                             <!-- <select name="idTipo[]" class="col-md-6" onchange="verificarPessoaRepetida(this.value)"> -->
-                            <?php
+                                                
+                                    <div class='col-md-2'>
+                                    <label class='control-label'>Produto</label>
+                                    
+                                    <select name="produtos[]" class='form-control'>
+                                    <?php
                                     require_once("conexaoBanco.php");
                                     $comando="SELECT * FROM produtos";
                                     $resultado=mysqli_query($conexao,$comando);
@@ -83,53 +64,24 @@
                                     }
 
                                     foreach($produtos as $p){
-                                
+                                        echo "<option value='".$p['idProduto']."'>".$p['nome']."</option>";
                                     }
-                                        echo "
-                            
-                        <label class='control-label'>Data *</label> 
-                        <input type='date' name='data' class='form-control'>
-                         
-                        <div class='col-md-2'>
-                        
-                                    <label class='control-label'>categoria</label>
-                                    <select id='categoria' name='categoria' class='form-control'></select>
+                                 ?>
+                                    </select>
+
                                     </div>
                 
+                                   
                                     <div class='col-md-2'>
-                                    <label class='control-label'>produto</label>
-                                    <input type='text' id='produto' name='produto'   class='form-control'>
-                                    </div>
-                
-                                    <div class='col-md-2'>
-                                    <label class='control-label'>preco</label>
-                                    <input type='text'  id='preco' name='preco' class='form-control'>
-                                    </div>
-                                    <div class='col-md-2'>
-                                    <label class='control-label'>quantidade</label>
-                                    <input type='text'  id='quantidade' name='quantidade' class='form-control'>
+                                    <label class='control-label'>Quantidade</label>
+                                    <input type='text'  id='quantidade' name='quantidades[]' class='form-control'>
                                     </div>
                                     <div class='col-md-4'>
                                     </div>
                                     <br>
-                                    <div class='col-md-2'>
-                                    <label class='control-label'>forma de pagamento</label>
-                                    <input type='text'  id='formapag' name='formapag' class='form-control'>
-                                    </div>
-                                    <div class='col-md-3'>
-                                    <label class='control-label'>total</label>
-                                    <input type='text'  id='total' name='total' class='form-control'>
-                                <br>
                                    
-                                </div>
-                            ";
                             
-                                //echo  listarCategoria();
-                             
-
-
-                                ?>
-
+                  
                             </select>                        
                             <div class="col-md-2">			
                                 <button type="button" class="botaoAcao" onclick="removerPessoa(this)">

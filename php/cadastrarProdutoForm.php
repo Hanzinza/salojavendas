@@ -1,6 +1,4 @@
-<?php
-  require_once("functionCategoria.php");
-?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
