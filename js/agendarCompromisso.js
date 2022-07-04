@@ -1,13 +1,13 @@
-function adicionarPessoa(){       
-    var novaPessoa = $("#pessoasDoCompromisso").children().first().clone();   
-    $("#pessoasDoCompromisso").append(novaPessoa);   
+function adicionarProdutos(){       
+    var novoProduto = $("#produtos").children().first().clone();   
+    $("#produtos").append(novoProduto);   
 }
 
 /**Função para o Agendar Compromissos */
-function removerPessoa(botao){    
-   var quantidadePessoas= document.getElementById("pessoasDoCompromisso").childElementCount;
-   if(quantidadePessoas==1){
-        alert("A última pessoa não pode ser removida");
+function removerProduto(botao){    
+   var quantidadeProduto= document.getElementById("produtos").childElementCount;
+   if(quantidadeProduto==1){
+        alert("o último produto não pode ser removida");
     }else{
         $(botao).parent().parent().remove();
     }    
