@@ -7,7 +7,7 @@ function adicionarProdutos(){
 function removerProduto(botao){    
    var quantidadeProduto= document.getElementById("produtos").childElementCount;
    if(quantidadeProduto==1){
-        alert("o último produto não pode ser removida");
+        alert("o último produto não pode ser removido");
     }else{
         $(botao).parent().parent().remove();
     }    
