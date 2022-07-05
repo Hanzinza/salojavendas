@@ -44,6 +44,10 @@ for($i=0;$i<sizeof($quantidade);$i++){
     <input type="hidden" value="<?=$formaPagamento?>" name="forma">
     <input type="hidden" value="<?=$produtos?>" name="produtos[]">
     <input type="hidden" value="<?=$quantidade?>" name="quantidades[]">
+    <?php  
+    echo "a forma de pagamento foi ".$formaPagamento
+
+    ?>
 <h3> Você deseja comprar </h3>
 <button type="submit"> Confirmar o pedido </button>
 </form>

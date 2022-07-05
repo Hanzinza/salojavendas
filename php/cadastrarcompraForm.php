@@ -27,8 +27,16 @@
             <label class='control-label'>Data *</label> 
             <input type='date' name='data' class='form-control'>
             <div class='col-md-2'>
-             <label class='control-label'>Forma de pagamento</label>
-                <input type='text'  id='formapag' name='formapag' class='form-control'>
+            <label class='control-label'>forma de pagamento</label>
+                                    
+                                    <select name="formapag" class='form-control'>
+                                    
+                                    <option value="1">Cartão</option>
+                                    <option value="2">Boleto</option>
+                                    <option value="3">Vista</option>
+                                    <option value="4">Dinheiro</option>
+                                 
+                                    </select>
             </div>
          
 
