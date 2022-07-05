@@ -1,9 +1,4 @@
-<?php
-  require_once("functionCategoria.php");
-
-?>
-
-        <!DOCTYPE html>
+       <!DOCTYPE html>
         <html lang="pt-br">
         <head>
             <meta charset="UTF-8">
@@ -47,26 +42,25 @@
                 
                 <div id="produtos">  <!--Div que irá conter as pessoas do compromisso-->           
                     <div class="form-group row" class="produtos"> <!--Exemplo de nova pessoa. Div que será clonada ao clicar em Adicionar Pessoa-->   			
-                            <!-- <select name="idTipo[]" class="col-md-6" onchange="verificarPessoaRepetida(this.value)"> -->
+                         
                                                 
                                     <div class='col-md-2'>
                                     <label class='control-label'>Produto</label>
                                     
                                     <select name="produtos[]" class='form-control'>
                                     <?php
-                                    require_once("conexaoBanco.php");
-                                    $comando="SELECT * FROM produtos";
-                                    $resultado=mysqli_query($conexao,$comando);
-                                    $p=mysqli_fetch_assoc($resultado);
-                                    $produtos=array();
-                                    while($p = mysqli_fetch_assoc($resultado)){
-                                        array_push($produtos, $p);
-                                    }
-
-                                    foreach($produtos as $p){
-                                        echo "<option value='".$p['idProduto']."'>".$p['nome']."</option>";
-                                    }
-                                 ?>
+                                        require_once("conexaoBanco.php");
+                                        $comando="SELECT * FROM produtos";
+                                        $resultado=mysqli_query($conexao,$comando);
+                                      
+                                        $produtos=array();
+                                        while($p = mysqli_fetch_assoc($resultado)){
+                                            array_push($produtos, $p);
+                                        }
+                                        foreach($produtos as $p){
+                                            echo "<option value=".$p['idProduto'].">".$p['nome']."</option>";
+                                        }
+                                     ?>
                                     </select>
 
                                     </div>
@@ -74,7 +68,7 @@
                                    
                                     <div class='col-md-2'>
                                     <label class='control-label'>Quantidade</label>
-                                    <input type='text'  id='quantidade' name='quantidades[]' class='form-control'>
+                                    <input type='text'  id='quantidade' name='quantidades[]' class='form-control' value="">
                                     </div>
                                     <div class='col-md-4'>
                                     </div>
@@ -82,7 +76,7 @@
                                    
                             
                   
-                            </select>                        
+                                         
                             <div class="col-md-2">			
                                 <button type="button" class="botaoAcao" onclick="removerProduto(this)">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-square-dotted" viewBox="0 0 16 16">
