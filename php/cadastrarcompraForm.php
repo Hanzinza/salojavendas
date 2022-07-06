@@ -28,6 +28,7 @@
             <input type='date' name='data' class='form-control'>
             <div class='col-md-2'>
             <label class='control-label'>forma de pagamento</label>
+            
                                     
                                     <select name="formapag" class='form-control'>
                                     
