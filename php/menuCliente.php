@@ -5,21 +5,19 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" style="font-weight: bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Pessoas
+            Consultar
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="pessoaForm.php">Nova pessoa</a></li>         
-            <li><a class="dropdown-item" href="relacaoForm.php">Nova relação</a></li>
+            <li><a class="dropdown-item" href="">Consultar Compra</a></li>         
+            
           </ul>
         </li>       
         <li class="nav-item dropdown ">
           <a class="nav-link dropdown-toggle text-white"style="font-weight: bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Cadastrar
+            Comprar
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="cadastrarCategoriaForm.phpp">Cadastrar Categoria</a></li>
-            <li><a class="dropdown-item" href="tipoCompromissoForm.php">Novo tipo</a></li>         
-            <li><a class="dropdown-item" href="consultarCompromissoForm.php">Consultar</a></li>
+            <li><a class="dropdown-item" href="cadastrarCompraForm.php">Comprar Produto</a></li>
           </ul>
         </li>       
       </ul>
