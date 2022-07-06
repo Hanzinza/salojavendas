@@ -12,9 +12,9 @@ $linhas = mysqli_num_rows($resultadoComp);
 if($linhas == 0){
     $comandoExclusao="DELETE FROM produtos WHERE idProduto=".$idProduto;
     $resultadoVerificar=mysqli_query($conexao, $comandoExclusao);
-    echo "deu certo";
+    header("Location: cadastrarProdutoForm.php?retorno=2");
 }else{
-    echo "nao deu certo";
+    header("Location: cadastrarProdutoForm.php?retorno=4");
 }
 
 

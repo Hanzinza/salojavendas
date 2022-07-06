@@ -20,9 +20,9 @@ categorias_idCategoria=".$tipoCategoria." WHERE idProduto=".$idProduto;
 $resultado = mysqli_query($conexao, $comandoEdicaoProduto);
 
 if($resultado == true){
-    echo "deu certo";
+    header("Location: cadastrarProdutoForm.php?retorno=4");
 }else{
-    echo "não deu certo";
+    header("Location: cadastrarProdutoForm.php?retorno=5");
 }
 
 
