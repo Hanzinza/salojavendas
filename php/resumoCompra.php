@@ -47,6 +47,7 @@ for($i=0;$i<sizeof($quantidade);$i++){
 <form action="cadastrarCompra.php" method="post">
     <input type="hidden" value="<?=$data?>" name="data">
     <input type="hidden" value="<?=$formaPagamento?>" name="forma">
+<<<<<<< HEAD
 
     <?php
         $qtde=sizeof($produtos);
@@ -61,6 +62,10 @@ for($i=0;$i<sizeof($quantidade);$i++){
     <input type="hidden" value="<?=$quantidade?>" name="quantidades[]">
     <br>
 
+=======
+    <input type="hidden" value="<?=$produtos?>" name="produtos[]">
+    <input type="hidden" value="<?=$quantidade?>" name="quantidades[]">
+>>>>>>> parent of 2cbb9e2 (comprar produtos ok)
 <h3> Você deseja comprar </h3>
 <button type="submit" class="btn btn-success"> Confirmar o pedido </button>
 </form>
