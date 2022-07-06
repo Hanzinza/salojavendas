@@ -1,22 +1,23 @@
-<nav class="navbar navbar-expand-lg navbar-light text-white" style="background-image:  radial-gradient(circle at 50% 50%, #8b17f1 0, #7b0ced 50%, #6a00e9 100%);">
-  <div class="container-fluid  style=background-image: radial-gradient(circle at 50% 50%, #8b17f1 0, #7b0ced 50%, #6a00e9 100%);">   
+
+<nav class="navbar navbar-expand-lg navbar-light text-white"  style="background-image: radial-gradient(circle at 50% 50%, #8b17f1 0, #7b0ced 50%, #6a00e9 100%);">
+  <div class="container-fluid ">   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" style="font-weight: bold" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Pessoass
+          <a class="nav-link dropdown-toggle text-white" style="font-weight: bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Pessoas
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="pessoaForm.php">Nova pessoa</a></li>         
             <li><a class="dropdown-item" href="relacaoForm.php">Nova relação</a></li>
           </ul>
         </li>       
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" style="font-weight: bold" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Compromissos
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle text-white"style="font-weight: bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Cadastrar
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="agendarCompromissoForm.php">Agendar</a></li>
+            <li><a class="dropdown-item" href="cadastrarCategoriaForm.phpp">Cadastrar Categoria</a></li>
             <li><a class="dropdown-item" href="tipoCompromissoForm.php">Novo tipo</a></li>         
             <li><a class="dropdown-item" href="consultarCompromissoForm.php">Consultar</a></li>
           </ul>
@@ -32,3 +33,4 @@
     </div>
   </div>
 </nav>
+
