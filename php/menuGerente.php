@@ -17,8 +17,8 @@
             Cadastrar
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="cadastrarCategoriaForm.phpp">Cadastrar Categoria</a></li>
-            <li><a class="dropdown-item" href="tipoCompromissoForm.php">Novo tipo</a></li>         
+            <li><a class="dropdown-item" href="cadastrarCategoriaForm.php">Cadastrar Categoria</a></li>
+            <li><a class="dropdown-item" href="tipoCompromissoForm.php">Editar Compra</a></li>         
             <li><a class="dropdown-item" href="consultarCompromissoForm.php">Consultar</a></li>
           </ul>
         </li>       

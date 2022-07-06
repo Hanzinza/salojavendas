@@ -37,15 +37,19 @@ for($i=0;$i<sizeof($quantidade);$i++){
     <title>Document</title>
 </head>
 <body style=" background-color: rgba(221, 235, 235, 0.644);">
+<br>
 
-<h3> O valor total da compra foi R$ <?=floatval($total)?></h3>
-<p>Data da compra <?=$data?> </p>
+<h4> O valor total da compra foi R$ <?=floatval($total)?></h4>
+<p>Data da compra:<?=$data?> </p>
+<p>Forma pagamento:<?=$formaPagamento?></p>
+
 
 <form action="cadastrarCompra.php" method="post">
     <input type="hidden" value="<?=$data?>" name="data">
     <input type="hidden" value="<?=$formaPagamento?>" name="forma">
     <input type="hidden" value="<?=$produtos?>" name="produtos[]">
     <input type="hidden" value="<?=$quantidade?>" name="quantidades[]">
+    <br>
 <h3> Você deseja comprar </h3>
 <button type="submit" class="btn btn-success"> Confirmar o pedido </button>
 </form>
