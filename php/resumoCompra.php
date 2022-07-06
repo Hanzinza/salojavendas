@@ -44,8 +44,14 @@ for($i=0;$i<sizeof($quantidade);$i++){
 <form action="cadastrarCompra.php" method="post">
     <input type="hidden" value="<?=$data?>" name="data">
     <input type="hidden" value="<?=$formaPagamento?>" name="forma">
-    <input type="hidden" value="<?=$produtos?>" name="produtos[]">
-    <input type="hidden" value="<?=$quantidade?>" name="quantidades[]">
+    <?php
+        $qtde=sizeof($produtos);
+        for($i=0; $i<$qtde; $i++){
+            echo ' <input type="hidden" value="'.$produtos[$i].'" name="produtos[]">';
+            echo ' <input type="hidden" value="'.$quantidade[$i].'" name="quantidades[]">';
+        }
+
+    ?>
 <h3> Você deseja comprar </h3>
 <button type="submit" class="btn btn-success"> Confirmar o pedido </button>
 </form>
