@@ -243,8 +243,8 @@
 		<div class="form-group">
 			<label class="control-label"></label>
 			<div class="col-md-8">
-				<button  class="btn btn-danger" type="reset">Cancelar</button>
-				<button  class="btn btn-success" type="submit">Cadastrar</button>			
+				<button  class="btn btn-danger" type="reset">voltar</button>
+				<button  class="btn btn-success" type="submit">Cancelar Compra</button>			
 			</div>
 		</div>
 
