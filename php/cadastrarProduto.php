@@ -16,9 +16,9 @@ VALUES
 $resultado = mysqli_query($conexao, $comando);
 
 if($resultado == true){
-    echo "deu derto";
+    header("Location: cadastrarProdutoForm.php?retorno=1");
 }else{
-    echo "não deu certo";
+    header("Location: cadastrarProdutoForm.php?retorno=0");
 }
 
 ?>

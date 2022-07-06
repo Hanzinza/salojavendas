@@ -20,7 +20,7 @@ if($linhas==0){
     }
 }else{
    
-    header("Location: cadastrarCategoriaForm.php?retorno=3");
+    header("Location: cadastrarCategoriaForm.php?retorno=4");
 }
 
 ?>
