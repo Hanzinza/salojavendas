@@ -1,8 +1,6 @@
 <?php
 require_once("conexaoBanco.php");
 
-$idUsuario = $_post['idUsuario']
-
 $data = $_POST['data'];
 $formaPagamento = $_POST['formapag'];
 
@@ -46,11 +44,11 @@ for($i=0;$i<sizeof($quantidade);$i++){
     <input type="hidden" value="<?=$formaPagamento?>" name="forma">
     <input type="hidden" value="<?=$produtos?>" name="produtos[]">
     <input type="hidden" value="<?=$quantidade?>" name="quantidades[]">
-    <input type="hidden" value=<?=$idUsuario?> name="idUsuario">
-    <?php  
-    echo "a forma de pagamento foi ".$formaPagamento
+    <php  
+    
 
-    ?>
+
+    >
 <h3> Você deseja comprar </h3>
 <button type="submit"> Confirmar o pedido </button>
 </form>
