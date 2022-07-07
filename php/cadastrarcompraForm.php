@@ -19,32 +19,32 @@
         <div id="alertas">
     <?php if(isset($_GET['retorno'])==true && $_GET['retorno']==0){ ?>
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <span>Houve algum problema cadastrar a categoria!</span>
+        <span>Houve algum problema para cadastrar a compra!</span>
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
     <?php }else if(isset($_GET['retorno'])==true && $_GET['retorno']==1){ ?>
     <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <span>Categoria cadastrada com sucesso!</span>
+        <span>Compra cadastrada com sucesso!</span>
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
     <?php }else if(isset($_GET['retorno'])==true && $_GET['retorno']==2){ ?>
 	<div class="alert alert-success alert-dismissible fade show" role="alert">
-        <span>Categoria excluída com sucesso!</span>
+        <span>Compra excluída com sucesso!</span>
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
 	<?php }else if(isset($_GET['retorno'])==true && $_GET['retorno']==3){ ?>
 	<div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <span>Não é possível excluir uma categoria associada a um produto!</span>
+        <span>Não é possível excluir uma compra associada a um produto!</span>
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
 	<?php }else if(isset($_GET['retorno'])==true && $_GET['retorno']==4){ ?>
 	<div class="alert alert-success alert-dismissible fade show" role="alert">
-        <span>Categoria editada com sucesso!</span>
+        <span>Compra editada com sucesso!</span>
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
 	<?php }else if(isset($_GET['retorno'])==true && $_GET['retorno']==5){ ?>
 	<div class="alert alert-warning alert-dismissible fade show" role="alert">
-		<span>Houve algum problema editar a categoria!</span>
+		<span>Houve algum problema para editar a compra!</span>
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
 
