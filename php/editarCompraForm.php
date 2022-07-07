@@ -97,22 +97,23 @@
                 
                 
                 <?php 
-                echo "</td>";
+            
+        
                 //se o status for 1...
                 //echo  "<td>" jkahdahdkahd "</td>";
                 //else if status for 2...
                 //echo  "<td>" ahdkhaad "</td>";
                 //else
                 // echo "<td>".$c['status']."</td>";
-                if(isset($_GET['staus']) && $_GET['status']!=="1"){
+                if(isset($_GET['status']) && $_GET['status']!=="1"){
                     echo "<td>andamento</td>";
-                }else{(isset($_GET['staus']) && $_GET['status']!=="2"){
+                }else if(isset($_GET['status']) && $_GET['status']!=="2"){
                         echo "<td>finalizado</td>";
-                }
-                }else{(isset($_GET['staus']) && $_GET['status']!=="3"){
+                
+                }else if(isset($_GET['status']) && $_GET['status']!=="3"){
                         echo "<td>cancelado</td>"; 
                 } 
-                }
+                
 
                 echo "<td>"; 
                  ?>
