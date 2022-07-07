@@ -19,7 +19,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="cadastrarCategoriaForm.php">Cadastrar Categoria</a></li>
             <li><a class="dropdown-item" href="cadastrarProdutoForm.php">Cadastrar Produto</a></li>
-            <li><a class="dropdown-item" href="tipoCompromissoForm.php">Editar Compra</a></li>         
+            <li><a class="dropdown-item" href="tipoCompraForm.php">Editar Compra</a></li>         
             <li><a class="dropdown-item" href="consultarCompromissoForm.php">Consultar</a></li>
             
           </ul>
