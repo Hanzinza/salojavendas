@@ -40,6 +40,7 @@ for($i=0;$i<sizeof($quantidade);$i++){
 
 <h3> O valor total da compra foi R$ <?=floatval($total)?></h3>
 <p>Data da compra <?=$data?> </p>
+<p>Forma de Pagamento <?=$formaPagamento?> </p>
 
 <form action="cadastrarCompra.php" method="post">
     <input type="hidden" value="<?=$data?>" name="data">
@@ -53,10 +54,10 @@ for($i=0;$i<sizeof($quantidade);$i++){
 
     ?>
 <h3> Você deseja comprar </h3>
-<button type="submit" class="btn btn-success"> Confirmar o pedido </button>
+<a href="cadastrarCompraForm.php"><button type="submit" class="btn btn-success"> Confirmar o pedido </button></a>
 </form>
 
-<a href=""><button type="button" class="btn btn-danger"> Descartar o pedido </button></a>
+<a href="cadastrarCompraForm.php"><button type="button" class="btn btn-danger"> Descartar o pedido </button></a>
 
 </body>
 </html>

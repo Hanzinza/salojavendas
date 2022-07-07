@@ -33,7 +33,7 @@ for($i=0; $i < sizeof($produtos); $i++){
  }
 
  if($resultado==true){
-    header("Location: cadastrarCategoriaForm.php?retorno=1");
+    header("Location: cadastrarForm.php?retorno=1");
 }else{
     header("Location: cadastrarCategoriaForm.php?retorno=0");
 }

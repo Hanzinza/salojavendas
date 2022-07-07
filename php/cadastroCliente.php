@@ -14,24 +14,16 @@ $senhaMD5=md5($senha);
 
 $comando = "INSERT INTO usuarios (nomeCompleto, email, cpf, telefone, senha, cep, numero, nivel)
 VALUES
-('".$nomeCompleto."', '".$email."', '".$cpf."', '".$telefone."', '".$senhaMD5."', '".$cep."', '".$nrcasa."', '".$nivel."')";
+('".$nomeCompleto."', '".$email."', ".$cpf.", '".$telefone."', '".$senhaMD5."', ".$cep.", '".$nrcasa."', '".$nivel."')";
 
 $resultado = mysqli_query($conexao, $comando);
 
 // echo $comando;
-if($linhas==0){
-    header("Location: ../index.php?retorno=2");
-}else{
-    $usuario=mysqli_fetch_assoc($resultado);
-    session_start();
-    $_SESSION['nivel']=$usuario['nivel'];
-    $_SESSION['idUsuario']=$usuario['idUsuario'];
-    if($usuario['nivel']=='1'){
-        header("Location: principalGerente.php");
-    }else{
-        header("Location: principalCliente.php");
-    }
-}
 
+if($resultado==true){
+    header("Location: ../login.php");
+}else{
+    header("Location: ../cadastro.php?retorno=0");
+}
 
 ?>
