@@ -18,7 +18,7 @@ if(isset($_SESSION['nivel']) && $_SESSION['nivel']=="1"){
 	<link rel="stylesheet" href="../css/alertas.css">
 </head>
 <body>
-<?php include("principalGerente.php"); ?> 
+<?php include("menuGerente.php"); ?> 
   
 
 <div id="alertas">
