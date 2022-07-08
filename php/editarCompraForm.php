@@ -81,7 +81,7 @@
             }
             foreach($clientesRetornados as $c){
                 echo "<tr>";
-                echo "<td>".$c['data']."</td>";
+                echo "<td>".date('d/m/Y',strtotime($c['data']))."</td>";
                 echo "<td>";                
                 ?>
 
@@ -97,6 +97,8 @@
                 
                 
                 <?php 
+                  echo "</td>";
+                  echo "<td>";
             
         
                 //se o status for 1...
@@ -105,16 +107,17 @@
                 //echo  "<td>" ahdkhaad "</td>";
                 //else
                 // echo "<td>".$c['status']."</td>";
-                if(isset($_GET['status']) && $_GET['status']!=="1"){
-                    echo "<td>andamento</td>";
-                }else if(isset($_GET['status']) && $_GET['status']!=="2"){
-                        echo "<td>finalizado</td>";
+                if($c['status']=="1"){
+                    echo "andamento";
+                }else if($c['status']=="2"){
+                        echo "finalizado";
                 
-                }else if(isset($_GET['status']) && $_GET['status']!=="3"){
-                        echo "<td>cancelado</td>"; 
+                }else if($c['status']=="3"){
+                        echo "cancelado"; 
                 } 
                 
 
+                echo "</td>"; 
                 echo "<td>"; 
                  ?>
                 <form action="alterarStatus.php" method="POST" class="formAcao">
