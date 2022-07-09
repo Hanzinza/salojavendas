@@ -5,13 +5,15 @@
         $status=$_POST['status'];
 
 
+    $comando="UPDATE compras SET status='".$status."' WHERE idCompra=".$idCompra;
+
     //echo $comando;
 
-    /*$resultado=mysqli_query($conexao, $comando);
+    $resultado=mysqli_query($conexao, $comando);
 
     if($resultado==true){
-        header("Location: cadastrarCategoriaForm.php?retorno=4");
+        header("Location: consultarCompraForm.php?retorno=1");
     }else{
-        header("Location: cadastrarCategoriaForm.php?retorno=5");
-    }*/
+      header("Location: consultarCompraForm.php?retorno=0");
+    }
 ?>

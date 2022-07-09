@@ -2,7 +2,7 @@
     include_once("menuCliente.php");
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,17 +29,17 @@
     <input type="hidden" name="idCompra" value="<?=$r['idCompra']?>">
 
     <div class="form-group">
-      <label class="control-label">Status Atual </label>  
-    <div class="col-md-4">
-     
-    </div>
-    </div>
+      <label class="control-label">Status Atual </label>
+    <select class="form-select" name="status">
+        <option value="2">Finalizado</option>
+        <option value="3">Cancelado</option>
+    </select>
     
     <div class="form-group">
     <label class="control-label"></label>
     <div class="col-md-8">
-    <a href="relacaoForm.php"><button  class="btn btn-warning" type="button">Finalizar</button></a>
-        <button  class="btn btn-danger" type="submit">Cancelar</button>			
+    <a href="relacaoForm.php"><button  class="btn btn-warning" type="button">Voltar</button></a>
+        <button  class="btn btn-success" type="submit">Alterar</button>			
     </div>
     </div>		
 </form>

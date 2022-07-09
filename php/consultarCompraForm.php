@@ -1,3 +1,6 @@
+<?php
+    include_once("menuCliente.php");
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,7 +18,23 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
     <script src="../js/agendarCompromisso.js"> </script>
 </head>
-<body>    
+<body> 
+<div id="alertas">
+    <?php if(isset($_GET['retorno'])==true && $_GET['retorno']==0){ ?>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <span>Houve algum problema ao alterar staus!</span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    <?php }else if(isset($_GET['retorno'])==true && $_GET['retorno']==1){ ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <span>Status Alterado com sucesso!</span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+
+
+	<?php } ?>
+</div>
+   
 
     <h3 class="titulos">Consulta de Compras </h3>  
 	
@@ -53,8 +72,8 @@
 		<tr>
 			<th>Data</th>	
             <th>Ver Produtos</th>	
-            <th>Status</th>	
-            <th>Cancelar Compra</th>	     
+            <th>Status Atual</th>	
+            <th>Alterar Status</th>	     
 		</tr>
         
         <?php
