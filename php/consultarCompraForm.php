@@ -1,5 +1,5 @@
 <?php
-    include_once("menuCliente.php");
+    include_once("menuGerente.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
