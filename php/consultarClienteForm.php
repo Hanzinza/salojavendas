@@ -1,4 +1,9 @@
 <?php
+session_start();
+if(isset($_SESSION['nivel']) && $_SESSION['nivel']=="2"){
+
+?>
+<?php
     include_once("menuCliente.php");
 ?>
 <!DOCTYPE html>
@@ -154,3 +159,11 @@
 
 </body>
 </html>
+
+
+<?php
+}else{
+	header("Location: alertaEfetuarLogin.html");
+}
+
+?>
