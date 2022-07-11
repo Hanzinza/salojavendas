@@ -8,7 +8,7 @@
             Consultar
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="">Consultar Compra</a></li>         
+            <li><a class="dropdown-item" href="consultarClienteForm.php">Consultar Compra</a></li>         
             
           </ul>
         </li>       

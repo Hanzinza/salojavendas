@@ -14,7 +14,7 @@ if($linhas == 0){
     $resultadoVerificar=mysqli_query($conexao, $comandoExclusao);
     header("Location: cadastrarProdutoForm.php?retorno=2");
 }else{
-    header("Location: cadastrarProdutoForm.php?retorno=4");
+    header("Location: cadastrarProdutoForm.php?retorno=3");
 }
 
 
